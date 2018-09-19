@@ -28,8 +28,6 @@ public class JpgFileExtensionValidator implements FileExtensionValidator {
         } catch(IOException e) {
             e.printStackTrace();
         }
-        return extensionSignature[0] == magicNumbers[0]
-                && extensionSignature[1] == magicNumbers[1]
-                && extensionSignature[2] == extensionSignature[2];
+        return FileExtensionValidator.validate(magicNumbers, extensionSignature);
     }
 }
