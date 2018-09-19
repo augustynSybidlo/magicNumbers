@@ -4,6 +4,6 @@ import java.io.File;
 
 public interface FileExtensionValidator {
 
-    boolean isValidExtention(File file);
-    boolean isInternallyCorrectExtention(File file);
+    boolean isValidExtension(File file);
+    boolean isInternallyCorrectExtension(File file);
 }
