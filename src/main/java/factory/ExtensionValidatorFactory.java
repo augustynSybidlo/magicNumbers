@@ -12,10 +12,13 @@ public class ExtensionValidatorFactory {
         switch(type) {
             case TXT:
                 validator = new TxtFileExtensionValidator();
+                break;
             case GIF:
                 validator = new GifFileExtensionValidator();
+                break;
             case JPG:
                 validator = new JpgFileExtensionValidator();
+                break;
         }
         return validator;
     }
