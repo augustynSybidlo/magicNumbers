@@ -19,7 +19,8 @@ public class ValidationController {
         this.path = path;
     }
 
-    public void validate() {
+    public boolean validate() {
+        boolean result = true;
         File file = getFile();
         String extension = getExtension();
         FileExtensionValidator validator = factory.getValidator(ExtensionType.valueOf(extension));
@@ -27,7 +28,9 @@ public class ValidationController {
             displayMessage.display(String.format("Extension %s is correct", extension));
         } else {
             displayMessage.display("Extension incorrect");
+            result = false;
         }
+        return result;
     }
 
     private File getFile() {
@@ -36,6 +39,6 @@ public class ValidationController {
 
     private String getExtension() {
         int lastIndex = path.lastIndexOf('.');
-        return path.substring(lastIndex);
+        return path.substring(++lastIndex).toUpperCase();
     }
 }
