@@ -9,7 +9,7 @@ public class TxtFileExtensionValidator implements FileExtensionValidator {
         boolean extension = fileName.endsWith(".TXT");
 
         if(!extension) return false;
-        BufferedReader in = null;
+        BufferedReader in;
         int sizeOfArray = 1024;
         char[] chars = new char[sizeOfArray];
 
