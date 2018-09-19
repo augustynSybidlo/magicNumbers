@@ -25,7 +25,8 @@ public class TxtFileExtensionValidator implements FileExtensionValidator {
 
     private boolean validate(char[] chars) {
         for (char ch : chars) {
-            if (!(ch > 0 && ch < 127)) return false;
+            if(ch == 0) break;
+            if (!(ch >= 0 && ch <= 126)) return false;
         }
         return true;
     }
